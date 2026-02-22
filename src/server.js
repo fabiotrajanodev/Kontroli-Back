@@ -25,11 +25,9 @@ fastify.register(usersRoutes, {
   prefix: "/users"
 })
 
-
 fastify.register(reportRoutes, {
   prefix: "/report"
 })
-
 
 // criando uma rota p categorias
 fastify.register(categoryRoutes, {
@@ -41,6 +39,9 @@ fastify.get('/', async (request, reply) => {
   return "server is listening at port 3000"
 })
 
+
+
+
 // Run the server!
 try {
   await fastify.listen({ port: 3000 })
@@ -48,3 +49,4 @@ try {
   fastify.log.error(err)
   process.exit(1)
 }
+

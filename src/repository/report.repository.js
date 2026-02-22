@@ -8,13 +8,15 @@ const reportRepository = {
     // p buscar as vendas 
     async get() {
         return await db`SELECT * FROM report`;
-    
-    }, 
 
-    async post(product_name, price, quantity,  seller, date ) {
-        return await db`INSERT INTO report(product_name, price, quantity, seller, date)
-        VALUES(${product_name}, ${price}, ${quantity}, ${seller}, ${date})`;
+    },
+    async post(code, price, quantity, seller, date) {
+        return await db`INSERT INTO report(code, price, quantity, seller, date)
+        VALUES(${code}, ${price}, ${quantity}, ${seller}, ${date})`
+
     }
+
+
 
 }
 

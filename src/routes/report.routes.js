@@ -9,9 +9,8 @@ export default async function reportRoutes(fastify) {
         return await reportController.get();
     })
 
+    fastify.post('/post', async (req, reply) => {
+        return reportController.post(req)
 
-    fastify.post('/post', async (req , reply) => {
-        return await reportController.post(req);
     })
 }
-

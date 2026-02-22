@@ -3,17 +3,14 @@ import reportRepository from "../repository/report.repository.js";
 
 const reportController = {
 
-    async get(){
+    async get() {
         return reportRepository.get();
     },
 
-    async post(req){
+    async post() {
+        const { code, price, quantity, seller, date} = req.body;
 
-        const { product_name, price, quantity,  seller, date }  = req.body;
-
-        await reportRepository.post(product_name, price, quantity,  seller, date);
-
-        return "qualquer coisa";
+        await reportRepository.post( code, price, quantity, seller, date)
     }
 
 }
